@@ -337,6 +337,8 @@ void OptimizeRestraint::calculate() {
           f[i]-=k*cv;
         } else {
           f[i]-=0.5*k*cv_j;
+          const double kji=kappa[j][i];
+          f[i]-=0.5*kji*cv_j;
         }
         ene+=0.5*k*cv*cv_j;
         getPntrToComponent(getPntrToArgument(i)->getName()+"_"+getPntrToArgument(j)->getName()+"_kappa")->set(kappa[i][j]);

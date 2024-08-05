@@ -136,6 +136,8 @@ void RestraintMatrix::calculate() {
         f-=k*cv_i;
       } else {
         f-=0.5*(k*cv_j);
+        const double kji=kappa[j][i];
+        f-=0.5*kji*cv_j;
       }
       ene+=0.5*k*cv_i*cv_j;
     }

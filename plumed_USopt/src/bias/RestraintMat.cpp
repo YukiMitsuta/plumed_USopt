@@ -132,13 +132,7 @@ void RestraintMatrix::calculate() {
     for(unsigned j=0; j<getNumberOfArguments(); ++j) {
       const double cv_j=difference(j,at[j],getArgument(j));
       const double k=kappa[i][j];
-      if (i == j) {
-        f-=k*cv_i;
-      } else {
-        f-=0.5*(k*cv_j);
-        const double kji=kappa[j][i];
-        f-=0.5*kji*cv_j;
-      }
+      f-=k*cv_j;
       ene+=0.5*k*cv_i*cv_j;
     }
     ene+= m*cv_i;

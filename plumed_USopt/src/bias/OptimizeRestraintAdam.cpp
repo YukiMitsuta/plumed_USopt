@@ -345,11 +345,7 @@ void OptimizeRestraintAdam::calculate() {
           for(j=0; j<narg; ++j) {
             const double mean_target_j=-difference(j,mean[j],target[j]); // this gives: mean[i] - target[i]
             const double ref_mean_j=-difference(j,aa_before[j],mean[j]); // this gives: aa[i] - mean[i]
-            if (i==j){
-              at[i] -= stepsize_cv[0]*mean_target_i*kk_before_offd[i][i];
-            } else {
-              at[i] -= stepsize_cv[0]*mean_target_j*kk_before_offd[i][j]*0.5;
-            }
+            at[i] -= stepsize_cv[0]*mean_target_i*kk_before_offd[i][j];
             grad_kappa[i][j]  -= mean_target_j*ref_target_i*0.5; 
             grad_kappa[i][j]  -= mean_target_i*ref_mean_j*0.5; 
           }
@@ -377,12 +373,8 @@ void OptimizeRestraintAdam::calculate() {
           for(j=0; j<narg; ++j) {
             const double mean_target_j=-difference(j,mean[j],target[j]); // this gives: mean[i] - target[i]
             const double ref_mean_j=-difference(j,aa_before[j],mean[j]); // this gives: aa[i] - mean[i]
-            if (i==j){
-              grad_cv[i] += mean_target_i*kk_before_offd[i][i];
-            } else {
-              grad_cv[i] += mean_target_j*kk_before_offd[i][j]*0.5;
-            }
 
+            grad_cv[i] += mean_target_j*kk_before_offd[i][j];
             grad_kappa[i][j]  = mean_target_j*ref_target_i*0.5; 
             grad_kappa[i][j]  += mean_target_i*ref_mean_j*0.5; 
             //if (t==1){
@@ -516,13 +508,7 @@ void OptimizeRestraintAdam::calculate() {
       for(unsigned j=0; j<narg; ++j) {
         const double cv_j=difference(j,aa[j],getArgument(j)); // this gives: getArgument(i) - at[0][i]
         const double k=kappa[i][j];
-        if (i==j){
-          f[i]-=k*cv;
-        } else {
-          f[i]-=0.5*k*cv_j;
-          const double kji=kappa[j][i];
-          f[i]-=0.5*kji*cv_j;
-        }
+        f-=k*cv_j;
         ene+=0.5*k*cv*cv_j;
         getPntrToComponent(getPntrToArgument(i)->getName()+"_"+getPntrToArgument(j)->getName()+"_kappa")->set(kappa[i][j]);
       }

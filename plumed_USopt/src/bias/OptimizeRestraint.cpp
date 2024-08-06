@@ -333,13 +333,7 @@ void OptimizeRestraint::calculate() {
       for(unsigned j=0; j<narg; ++j) {
         const double cv_j=difference(j,aa[j],getArgument(j)); // this gives: getArgument(i) - at[0][i]
         const double k=kappa[i][j];
-        if (i==j){
-          f[i]-=k*cv;
-        } else {
-          f[i]-=0.5*k*cv_j;
-          const double kji=kappa[j][i];
-          f[i]-=0.5*kji*cv_j;
-        }
+        f-=k*cv_j;
         ene+=0.5*k*cv*cv_j;
         getPntrToComponent(getPntrToArgument(i)->getName()+"_"+getPntrToArgument(j)->getName()+"_kappa")->set(kappa[i][j]);
       }

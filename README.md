@@ -1,9 +1,10 @@
 These codes are add-on programs for plumed (https://www.plumed.org/) to calculate the parameter optimization of the umbrella sampling method.
 
-For more details, please read the article below.
+If you use this script, please refer the next article.
 
-Mitsuta, Y., & Asada, T. (2024). Parameter Optimization Method in Multidimensional Umbrella Sampling. Journal of Chemical Theory and Computation, 20(15), 6531-6548.
+Mitsuta, Y., & Asada, T. (2024). "Parameter Optimization Method in Multidimensional Umbrella Sampling." _Journal of Chemical Theory and Computation_, **20(15)**, 6531-6548.
 
+![Example Image](./USopt_example.png)
 # How to use the umbrella sampling parameter optimization method. 
 
 ## 1. Installation 
@@ -74,3 +75,9 @@ Once plumed.dat is created, all you need to do is run the main calculation to pe
 $ gmx grompp -f ./run.mdp -o ./run.tpr -c ./npt.gro -p ./topol.top 
 $ gmx mdrun -deffnm run -plumed ./plumed.dat
 ```
+
+# Author
+
+* Yuki Mitsuta (満田祐樹）
+* Department of Chemistory, Graduate School of Science, Osaka Metropolitan University
+* E-mail: mitsutay[at]omu.ac.jp

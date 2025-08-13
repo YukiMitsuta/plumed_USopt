@@ -55,9 +55,9 @@ The output options are as follows. Note that you must specify _label_._arg_\_cnt
 | ------------- | ------------- |
 | _cntr  | Optimized reference point   |
 | _kappa  | Optimized bias potential parameter   |
-| _mean  |  Mean sampling point    |
-| _Kgrad  | Optimized bias potential gradient    |
-| _CVgrad  | Optimized reaction coordinate gradient    |
+| _mean  |  Mean point of sampling    |
+| _Kgrad  | Gradient of bias potential parameter   |
+| _CVgrad  | Gradient of CV  |
 
 
 ### Step 1: Calculate the optimization calculation. 

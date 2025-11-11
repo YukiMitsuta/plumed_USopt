@@ -4,6 +4,8 @@ If you use this script, please refer the next article.
 
 Mitsuta, Y., & Asada, T. (2024). "Parameter Optimization Method in Multidimensional Umbrella Sampling." _Journal of Chemical Theory and Computation_, **20(15)**, 6531-6548.
 
+Mitsuta, Y., & Asada, T. (2025). “Automated Bias Potential Optimization via Position and Variance Control in Umbrella Sampling” _Journal of Chemical Physics_, **163**, 174116.
+
 ![Example Image](./USopt_example.png)
 # How to use the umbrella sampling parameter optimization method. 
 

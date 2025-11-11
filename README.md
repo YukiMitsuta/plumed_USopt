@@ -1,6 +1,6 @@
 These codes are add-on programs for plumed (https://www.plumed.org/) to calculate the parameter optimization of the umbrella sampling method.
 
-If you use this script, please refer the next article.
+If you use this script, please refer the next articles.
 
 Mitsuta, Y., & Asada, T. (2024). "Parameter Optimization Method in Multidimensional Umbrella Sampling." _Journal of Chemical Theory and Computation_, **20(15)**, 6531-6548.
 

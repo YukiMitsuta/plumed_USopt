@@ -45,7 +45,7 @@ You can use this code with any program that supports umbrella sampling in Plumed
 | EXP_DECAYING_AVER  | Exponential decaying average term |
 | HOTELLINGMAX  | Upper limit on Hotelling distance (specifying this parameter has been found not to improve optimization; turn it off by entering 99999)  |
 | TARGETSIGMA  | Upper limit on optimization variance  |
-| KAPIGNORECVPASTEPSIZE  | CV to ignore in optimization (enter 1.0 for the ignored dimension). |
+| IGNORECV  | CV to ignore in optimization (enter 1.0 for the ignored dimension). |
 
 
 Note that the dimension of TARGETSIGMA does not correspond to the dimension of CV, but rather to the order of the largest eigenvalues when the variance-covariance matrix is expanded. 
